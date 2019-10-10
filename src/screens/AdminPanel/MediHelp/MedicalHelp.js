@@ -16,29 +16,29 @@ import {
     Alert
 } from 'react-native';
 import HeaderPrimary from '../../../components/Header/HeaderPrimary';
+import Metrics from '../../../config/Metrics';
 import AppStyles from '../../../config/AppStyles';
 import API from '../../../config/API';
 import Spinner from 'react-native-loading-spinner-overlay';
-import Metrics from '../../../config/Metrics';
-import CrimeReportsMore from './CrimeReportMore';
+import MedicalHelpMore from './MedicalHelpMore';
 
-export default class ViewCrimeReports extends Component {
+export default class MedicalHelp extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             loading:false,
-            crime_report_data:[],
+            medical_helpdata:[],
         }
     }
 
     clickEventListener = (item) => {
         // Alert.alert("Item selected: "+item.description)
-        this.props.navigation.navigate("CrimeReportsMore",{screen:CrimeReportsMore , Report:item})
+        this.props.navigation.navigate("MedicalHelpMore",{screen:MedicalHelpMore , Help:item})
     }
 
     componentWillMount(){
-        this.API_Get_CrimeReports();
+        this.API_Get_MedHelpReports();
     }
     
     componentDidMount(){
@@ -56,10 +56,10 @@ export default class ViewCrimeReports extends Component {
     }
 
     //Get All Missing Persons Details API function
-    API_Get_CrimeReports = () => {
+    API_Get_MedHelpReports = () => {
         this.setState({loading:true})
 
-        fetch(API.API_GET_CRIME_REPORTS,{
+        fetch(API.API_GET_MEDHELP_REPORTS,{
             method:'GET',
             headers:{
                 'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export default class ViewCrimeReports extends Component {
             .then((responseText) => {
                 this.setState({loading:false})
                 if(responseText.data[0].status_code == '200'){
-                    this.setState({crime_report_data:responseText.data})
+                    this.setState({medical_helpdata:responseText.data})
                 }else{
 
                 }
@@ -91,7 +91,7 @@ export default class ViewCrimeReports extends Component {
         return (
             <View style={styles.container}>
             <HeaderPrimary 
-            title='Crime Reports'
+            title='All Mecial Help'
             onPress={ () => this.backButtonOnPress()}
             />
 
@@ -99,7 +99,7 @@ export default class ViewCrimeReports extends Component {
             <FlatList 
                 style={styles.tasks}
                 columnWrapperStyle={styles.listContainer}
-                data={this.state.crime_report_data}
+                data={this.state.medical_helpdata}
                 keyExtractor= {(item) => {
                     return item.id;
                 }}
@@ -107,8 +107,8 @@ export default class ViewCrimeReports extends Component {
                 return (
                     <TouchableOpacity style={[styles.card, {borderColor:AppStyles.primaryColor}]} onPress={() => {this.clickEventListener(item)}}>
                     <View style={styles.cardContent}>
-                        <Text style={[styles.description]}>Crime in {item.Crime_Location}</Text>
-                        <Text style={styles.date}>Prority Level : {item.Prority_Level}</Text>
+                        <Text style={[styles.description]}>{item.Help_Title}</Text>
+                        <Text style={styles.date}>Reported By : {item.Reporter_Name}</Text>
                     </View>
                     </TouchableOpacity>
                 )}}/>

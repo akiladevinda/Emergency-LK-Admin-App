@@ -10,6 +10,11 @@ import { fromRight } from 'react-navigation-transitions';
 import SplashScreen from "../screens/SplashScreen/SplashScreen";
 import HomeScreen from "../screens/AdminPanel/HomeScreen";
 import ViewCrimeReports from "../screens/AdminPanel/Crime/ViewCrimeReports";
+import CrimeReportsMore from "../screens/AdminPanel/Crime/CrimeReportMore";
+import MissingPersons from "../screens/AdminPanel/MissingPerson/MissingPersons";
+import MissingPersonsMore from "../screens/AdminPanel/MissingPerson/MissingPersonsMore";
+import MedicalHelp from "../screens/AdminPanel/MediHelp/MedicalHelp";
+import MedicalHelpMore from "../screens/AdminPanel/MediHelp/MedicalHelpMore";
 
 
 
@@ -37,7 +42,42 @@ const AppNavigator = createStackNavigator({
             header: null,  
             gesturesEnabled: false 
           },   
-        },
+    },
+    CrimeReportsMore: {
+          screen:CrimeReportsMore,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    MissingPersons: {
+          screen:MissingPersons,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    MissingPersonsMore: {
+          screen:MissingPersonsMore,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    MedicalHelp: {
+          screen:MedicalHelp,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    MedicalHelpMore: {
+          screen:MedicalHelpMore,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
 }, {
     transitionConfig: () => fromRight(),
 });

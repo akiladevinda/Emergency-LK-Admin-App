@@ -30,6 +30,7 @@ const Assets = {
     PERSON_HEIGHT:require('../assets/crime/height.png'),
     IC_GET_CALL : require('../assets/button/call.png'),
     IC_GET_EMAIL : require('../assets/button/email.png'),
+    IC_PRINT  : require('../assets/button/print.png'),
 
 };
 

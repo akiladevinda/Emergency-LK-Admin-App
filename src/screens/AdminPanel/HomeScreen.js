@@ -22,6 +22,8 @@ import Metrics from '../../config/Metrics';
 import Assets from '../../config/Assets';
 import AppStyles from '../../config/AppStyles';
 import ViewCrimeReports from './Crime/ViewCrimeReports';
+import MissingPersons from './MissingPerson/MissingPersons';
+import MedicalHelp from './MediHelp/MedicalHelp';
 
 
 export default class HomeScreen extends Component {
@@ -63,18 +65,12 @@ export default class HomeScreen extends Component {
         // alert(item.title)
         if(item.id == 1){ 
             this.props.navigation.navigate("ViewCrimeReports",{screen:ViewCrimeReports})
-        // }else if(item.id == 2){
-        //     this.props.navigation.navigate("MissingPerson",{screen:MissingPerson,onGoBack: () => this.missingPersonCountRefresh(),})
-        // }else if(item.id == 3){
-        //     this.props.navigation.navigate("MedicalHelp",{screen:MedicalHelp})
-        // }else if(item.id == 4){
-        //     this.props.navigation.navigate("TsunamiAlerts",{screen:TsunamiAlerts})
-        // }else if(item.id == 5){
-        //     this.props.navigation.navigate("EarthquakeAlerts",{screen:EarthquakeAlerts})
-        // }else if(item.id == 6){
-        //     this.props.navigation.navigate("FloodAlerts",{screen:FloodAlerts})
-        // }
+        }else if(item.id == 2){
+            this.props.navigation.navigate("MissingPersons",{screen:MissingPersons})
+        }else if(item.id == 3){
+            this.props.navigation.navigate("MedicalHelp",{screen:MedicalHelp})
         }
+        
     }
 
     render() {
