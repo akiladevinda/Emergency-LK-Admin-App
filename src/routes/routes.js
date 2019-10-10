@@ -15,6 +15,9 @@ import MissingPersons from "../screens/AdminPanel/MissingPerson/MissingPersons";
 import MissingPersonsMore from "../screens/AdminPanel/MissingPerson/MissingPersonsMore";
 import MedicalHelp from "../screens/AdminPanel/MediHelp/MedicalHelp";
 import MedicalHelpMore from "../screens/AdminPanel/MediHelp/MedicalHelpMore";
+import TsunamiAlerts from "../screens/AdminPanel/AddAlerts/TsunamiAlerts";
+import EarthquakeAlerts from "../screens/AdminPanel/AddAlerts/EarthquakeAlerts";
+import FloodAlerts from "../screens/AdminPanel/AddAlerts/FloodAlerts";
 
 
 
@@ -73,6 +76,27 @@ const AppNavigator = createStackNavigator({
     },
     MedicalHelpMore: {
           screen:MedicalHelpMore,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    TsunamiAlerts: {
+          screen:TsunamiAlerts,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    EarthquakeAlerts: {
+          screen:EarthquakeAlerts,
+          navigationOptions: { 
+            header: null,  
+            gesturesEnabled: false 
+          },   
+    },
+    FloodAlerts: {
+          screen:FloodAlerts,
           navigationOptions: { 
             header: null,  
             gesturesEnabled: false 

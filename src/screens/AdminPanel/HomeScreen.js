@@ -24,6 +24,9 @@ import AppStyles from '../../config/AppStyles';
 import ViewCrimeReports from './Crime/ViewCrimeReports';
 import MissingPersons from './MissingPerson/MissingPersons';
 import MedicalHelp from './MediHelp/MedicalHelp';
+import TsunamiAlerts from './AddAlerts/TsunamiAlerts';
+import EarthquakeAlerts from './AddAlerts/EarthquakeAlerts';
+import FloodAlerts from './AddAlerts/FloodAlerts';
 
 
 export default class HomeScreen extends Component {
@@ -69,6 +72,12 @@ export default class HomeScreen extends Component {
             this.props.navigation.navigate("MissingPersons",{screen:MissingPersons})
         }else if(item.id == 3){
             this.props.navigation.navigate("MedicalHelp",{screen:MedicalHelp})
+        }else if(item.id == 4){
+            this.props.navigation.navigate("TsunamiAlerts",{screen:TsunamiAlerts})
+        }else if(item.id == 5){
+            this.props.navigation.navigate("EarthquakeAlerts",{screen:EarthquakeAlerts})
+        }else if(item.id == 6){
+            this.props.navigation.navigate("FloodAlerts",{screen:FloodAlerts})
         }
         
     }
