@@ -16,6 +16,7 @@
     "react-native": "0.61.2",
     "react-native-device-info": "^3.1.4",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-image-viewing": "^0.1.8",
     "react-native-linear-gradient": "^2.5.6",
     "react-native-loading-spinner-overlay": "^1.0.1",
     "react-native-modal-datetime-picker": "^7.6.0",
